@@ -6,7 +6,6 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -19,7 +18,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Button addBt, clearBt;
-    EditText NameET, AuthorET, StyleET, CostET;
+    EditText NameET, makerET, cityET, priceET;
     DBhelper dBhelper;
     SQLiteDatabase database;
     ContentValues contentValues;
@@ -35,10 +34,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         addBt.setOnClickListener(this);
         clearBt.setOnClickListener(this);
 
-        NameET = (EditText) findViewById(R.id.NameET);
-        AuthorET = (EditText) findViewById(R.id.Author);
-        StyleET = (EditText) findViewById(R.id.Style);
-        CostET = (EditText) findViewById(R.id.Cost);
+        NameET = (EditText) findViewById(R.id.name);
+        makerET = (EditText) findViewById(R.id.maker);
+        cityET = (EditText) findViewById(R.id.city);
+        priceET = (EditText) findViewById(R.id.price);
 
         dBhelper = new DBhelper(this);
         database = dBhelper.getWritableDatabase();
@@ -119,9 +118,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.AddBut:
                 String name = NameET.getText().toString();
-                String auth = AuthorET.getText().toString();
-                String style = StyleET.getText().toString();
-                String cost = CostET.getText().toString();
+                String maker = makerET.getText().toString();
+                String city = cityET.getText().toString();
+                String price = priceET.getText().toString();
 
 
                 contentValues = new ContentValues();
@@ -131,18 +130,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     toast.show();
                 } else {
                     contentValues.put(DBhelper.KEY_NAME, name);
-                    contentValues.put(DBhelper.KEY_MAKER, auth);
-                    contentValues.put(DBhelper.KEY_CITY, style);
-                    contentValues.put(DBhelper.KEY_PRICE, cost);
+                    contentValues.put(DBhelper.KEY_MAKER, maker);
+                    contentValues.put(DBhelper.KEY_CITY, city);
+                    contentValues.put(DBhelper.KEY_PRICE, price);
 
                     database.insert(DBhelper.TABLE_CONTACTS, null, contentValues);
                 }
 
                 UpdateTable();
                 NameET.setText(null);
-                AuthorET.setText(null);
-                StyleET.setText(null);
-                CostET.setText(null);
+                makerET.setText(null);
+                cityET.setText(null);
+                priceET.setText(null);
                 break;
 
 

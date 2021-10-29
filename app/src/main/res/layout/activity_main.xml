@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
         <EditText
-            android:id="@+id/NameET"
+            android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Название товара"
@@ -15,29 +15,29 @@
 
 
         <EditText
-            android:id="@+id/Author"
+            android:id="@+id/maker"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Производитель"
             android:minHeight="48dp"
-            app:layout_constraintTop_toBottomOf="@+id/NameET" />
+            app:layout_constraintTop_toBottomOf="@+id/name" />
 
         <EditText
-            android:id="@+id/Style"
+            android:id="@+id/city"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Город производитель"
             android:minHeight="48dp"
-            app:layout_constraintTop_toBottomOf="@+id/Author" />
+            app:layout_constraintTop_toBottomOf="@+id/maker" />
 
 
         <EditText
-            android:id="@+id/Cost"
+            android:id="@+id/price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Цена"
             android:minHeight="48dp"
-            app:layout_constraintTop_toBottomOf="@+id/Style"
+            app:layout_constraintTop_toBottomOf="@+id/city"
             android:inputType="number"
             tools:layout_editor_absoluteX="0dp" />
 
@@ -48,7 +48,7 @@
             android:layout_marginTop="8dp"
             android:text="Добавить"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/Cost" />
+            app:layout_constraintTop_toBottomOf="@id/price" />
 
 
         <Button
@@ -58,7 +58,7 @@
             android:layout_marginTop="8dp"
             android:text="Очистить"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/Cost" />
+            app:layout_constraintTop_toBottomOf="@id/price" />
 
 
         <TableLayout
