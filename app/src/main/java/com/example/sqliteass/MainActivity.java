@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 clearOnEl.setOnClickListener(this);
                 params.weight = 1.0f;
                 clearOnEl.setLayoutParams(params);
-                clearOnEl.setText("Удоли");
+                clearOnEl.setText("Удалить");
                 clearOnEl.setId(cursor.getInt(idIndex));
                 TBrow.addView(clearOnEl);
 
